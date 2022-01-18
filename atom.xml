@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-12-18T16:52:32.946Z</updated>
+  <updated>2022-01-18T08:19:26.726Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/2022/01/18/tensorflow-quantum/"/>
+    <id>http://example.com/2022/01/18/tensorflow-quantum/</id>
+    <published>2022-01-18T08:17:33.764Z</published>
+    <updated>2022-01-18T08:19:26.726Z</updated>
+    
+    <content type="html"><![CDATA[<p>title: tensorflow-quantum环境搭建<br>date: 2022-1-18<br>tags:</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;title: tensorflow-quantum环境搭建&lt;br&gt;date: 2022-1-18&lt;br&gt;tags:&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>LSB最低有效位算法</title>
