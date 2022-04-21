@@ -202,7 +202,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-04-21 22:09:12 / 修改时间：22:13:22" itemprop="dateCreated datePublished" datetime="2022-04-21T22:09:12+08:00">2022-04-21</time>
+              <time title="创建时间：2022-04-21 22:09:12 / 修改时间：22:17:50" itemprop="dateCreated datePublished" datetime="2022-04-21T22:09:12+08:00">2022-04-21</time>
             </span>
 
           
@@ -221,8 +221,7 @@
 <p><img src="%E6%99%BA%E8%83%BD%E5%BE%AA%E8%BF%B9%E9%81%BF%E9%9A%9C%E5%B0%8F%E8%BD%A6/file0002.jpg"></p>
 <p><img src="%E6%99%BA%E8%83%BD%E5%BE%AA%E8%BF%B9%E9%81%BF%E9%9A%9C%E5%B0%8F%E8%BD%A6/file0003.jpg"></p>
 <h4 id="代码部分"><a href="#代码部分" class="headerlink" title="代码部分"></a>代码部分</h4><p>#include &lt;reg51.h&gt;<br>#define uchar unsigned char<br>#define uint unsigned int<br>int count=0,open1=0,open2=0;<br>uchar pwm_left_val=0; //设置占空比<br>uchar pwm_right_val=0;<br>uchar pwm_t=0;   //周期<br>uchar flag=1;<br>uchar dat,i=0,j=0;<br>sbit IN1  = P2^7;<br>sbit IN2  = P2^6;<br>sbit IN3  = P2^5;<br>sbit IN4  = P2^4;<br>sbit LO = P3^7;<br>sbit RO = P3^6;<br>sbit L1=P3^4;<br>sbit R1=P3^5;<br>sbit ENA=P2^0;<br>sbit ENB=P2^1;<br>/*定义数码管 */<br>sbit S1=P0^0;<br>sbit S2=P0^1;<br>sbit S3=P0^2;<br>sbit S4=P0^3;<br>sbit S5=P0^4;<br>sbit S6=P0^5;<br>sbit S7=P0^6;<br>sbit S8=P0^7;<br>sfr AUXR = 0X8E;<br>sfr IPH = 0xb7;<br>void UsartInit()<br>{<br>AUXR = 0X10;<br>SCON = 0X50;<br>TMOD = 0X20;<br>PCON = 0X00;<br>TH1 = 0XFD;<br>TL1 = 0XFD;<br>ES = 1;<br>EA = 1;<br>TR1 = 1;<br>}<br>void delay(unsigned int k)//延时函数<br>{<br> unsigned int x,y;<br> for(x=0;x&lt;k;x++)<br> {<br>  for(y=0;y&lt;2000;y++);<br> }<br>}<br>void forward()//使能端高电平<br>{<br>ENA=1;<br>ENB=1;<br>}<br>void quit()//使能端低电平<br>{<br>ENA=0;<br>ENB=0;<br>}<br>void rundown()//减速直行<br>{</p>
-<pre><code>pwm_left_val=30;    
-</code></pre>
+<p>   pwm_left_val=30; </p>
 <p>   pwm_right_val=32;<br>   IN1 = 0;<br>    IN2 = 1;<br>    IN3 = 0;<br>    IN4 = 1;<br>}<br>void stop()//停止<br>{</p>
 <p> IN1 = 0 ;<br>  IN2 = 0 ;<br>  IN3 = 0 ;<br>  IN4 = 0 ;<br>}<br>void turnright()//右拐<br>{<br>     pwm_left_val=50;<br>    pwm_right_val=50;<br>    IN1 = 1;<br>    IN2 = 0;<br>    IN3 = 0;<br>    IN4 = 1;</p>
 <p>}void turnrightdown()//减速右拐<br>{</p>
@@ -528,6 +527,12 @@
           <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">日志</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
