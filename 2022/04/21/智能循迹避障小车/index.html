@@ -31,14 +31,14 @@
 <meta property="og:site_name" content="烧鸡翼我钟意食">
 <meta property="og:description" content="项目介绍以AT89C52单片机作为微控制器，设计出一种可循迹避障小车。通过红外传感器检测黑带信号，利用单片机输出PWM脉冲控制两组直流电机的转向和转速，使小车沿着黑线行走，并通过避障模块实现遇到物体自动转向。小车由手机发送指令，蓝牙HC-05接收指令传入单片机实现循迹与避障模式切换等功能。 硬件设计电机驱动模块型号为L298N，循迹模块TCRT500、避障模块以及蓝牙模块HC05和TP4056充电">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2022/04/21/%E6%99%BA%E8%83%BD%E5%BE%AA%E8%BF%B9%E9%81%BF%E9%9A%9C%E5%B0%8F%E8%BD%A6/%E6%99%BA%E8%83%BD%E5%BE%AA%E8%BF%B9%E9%81%BF%E9%9A%9C%E5%B0%8F%E8%BD%A6/file0002.jpg">
-<meta property="og:image" content="http://example.com/2022/04/21/%E6%99%BA%E8%83%BD%E5%BE%AA%E8%BF%B9%E9%81%BF%E9%9A%9C%E5%B0%8F%E8%BD%A6/%E6%99%BA%E8%83%BD%E5%BE%AA%E8%BF%B9%E9%81%BF%E9%9A%9C%E5%B0%8F%E8%BD%A6/file0003.jpg">
+<meta property="og:image" content="http://example.com/%E6%99%BA%E8%83%BD%E5%BE%AA%E8%BF%B9%E9%81%BF%E9%9A%9C%E5%B0%8F%E8%BD%A6/file0002.jpg">
+<meta property="og:image" content="http://example.com/%E6%99%BA%E8%83%BD%E5%BE%AA%E8%BF%B9%E9%81%BF%E9%9A%9C%E5%B0%8F%E8%BD%A6/file0003.jpg">
 <meta property="article:published_time" content="2022-04-21T14:09:12.000Z">
 <meta property="article:modified_time" content="2022-04-21T14:19:41.706Z">
 <meta property="article:author" content="304-5床">
 <meta property="article:tag" content="硬件作品">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2022/04/21/%E6%99%BA%E8%83%BD%E5%BE%AA%E8%BF%B9%E9%81%BF%E9%9A%9C%E5%B0%8F%E8%BD%A6/%E6%99%BA%E8%83%BD%E5%BE%AA%E8%BF%B9%E9%81%BF%E9%9A%9C%E5%B0%8F%E8%BD%A6/file0002.jpg">
+<meta name="twitter:image" content="http://example.com/%E6%99%BA%E8%83%BD%E5%BE%AA%E8%BF%B9%E9%81%BF%E9%9A%9C%E5%B0%8F%E8%BD%A6/file0002.jpg">
 
 <link rel="canonical" href="http://example.com/2022/04/21/%E6%99%BA%E8%83%BD%E5%BE%AA%E8%BF%B9%E9%81%BF%E9%9A%9C%E5%B0%8F%E8%BD%A6/">
 
@@ -240,8 +240,8 @@
       
         <h4 id="项目介绍"><a href="#项目介绍" class="headerlink" title="项目介绍"></a>项目介绍</h4><p>以AT89C52单片机作为微控制器，设计出一种可循迹避障小车。通过红外传感器检测黑带信号，利用单片机输出PWM脉冲控制两组直流电机的转向和转速，使小车沿着黑线行走，并通过避障模块实现遇到物体自动转向。小车由手机发送指令，蓝牙HC-05接收指令传入单片机实现循迹与避障模式切换等功能。</p>
 <h4 id="硬件设计"><a href="#硬件设计" class="headerlink" title="硬件设计"></a>硬件设计</h4><p>电机驱动模块型号为L298N，循迹模块TCRT500、避障模块以及蓝牙模块HC05和TP4056充电源模块板，充电模块可直接连接数据线充电。</p>
-<p><img src="%E6%99%BA%E8%83%BD%E5%BE%AA%E8%BF%B9%E9%81%BF%E9%9A%9C%E5%B0%8F%E8%BD%A6/file0002.jpg"></p>
-<p><img src="%E6%99%BA%E8%83%BD%E5%BE%AA%E8%BF%B9%E9%81%BF%E9%9A%9C%E5%B0%8F%E8%BD%A6/file0003.jpg"></p>
+<p><img src="/%E6%99%BA%E8%83%BD%E5%BE%AA%E8%BF%B9%E9%81%BF%E9%9A%9C%E5%B0%8F%E8%BD%A6/file0002.jpg"></p>
+<p><img src="/%E6%99%BA%E8%83%BD%E5%BE%AA%E8%BF%B9%E9%81%BF%E9%9A%9C%E5%B0%8F%E8%BD%A6/file0003.jpg"></p>
 <h4 id="代码部分"><a href="#代码部分" class="headerlink" title="代码部分"></a>代码部分</h4><p>#include &lt;reg51.h&gt;<br>#define uchar unsigned char<br>#define uint unsigned int<br>int count=0,open1=0,open2=0;<br>uchar pwm_left_val=0; //设置占空比<br>uchar pwm_right_val=0;<br>uchar pwm_t=0;   //周期<br>uchar flag=1;<br>uchar dat,i=0,j=0;<br>sbit IN1  = P2^7;<br>sbit IN2  = P2^6;<br>sbit IN3  = P2^5;<br>sbit IN4  = P2^4;<br>sbit LO = P3^7;<br>sbit RO = P3^6;<br>sbit L1=P3^4;<br>sbit R1=P3^5;<br>sbit ENA=P2^0;<br>sbit ENB=P2^1;<br>/*定义数码管 */<br>sbit S1=P0^0;<br>sbit S2=P0^1;<br>sbit S3=P0^2;<br>sbit S4=P0^3;<br>sbit S5=P0^4;<br>sbit S6=P0^5;<br>sbit S7=P0^6;<br>sbit S8=P0^7;<br>sfr AUXR = 0X8E;<br>sfr IPH = 0xb7;<br>void UsartInit()<br>{<br>AUXR = 0X10;<br>SCON = 0X50;<br>TMOD = 0X20;<br>PCON = 0X00;<br>TH1 = 0XFD;<br>TL1 = 0XFD;<br>ES = 1;<br>EA = 1;<br>TR1 = 1;<br>}<br>void delay(unsigned int k)//延时函数<br>{<br> unsigned int x,y;<br> for(x=0;x&lt;k;x++)<br> {<br>  for(y=0;y&lt;2000;y++);<br> }<br>}<br>void forward()//使能端高电平<br>{<br>ENA=1;<br>ENB=1;<br>}<br>void quit()//使能端低电平<br>{<br>ENA=0;<br>ENB=0;<br>}<br>void rundown()//减速直行<br>{</p>
 <p>   pwm_left_val=30; </p>
 <p>   pwm_right_val=32;<br>   IN1 = 0;<br>    IN2 = 1;<br>    IN3 = 0;<br>    IN4 = 1;<br>}<br>void stop()//停止<br>{</p>
